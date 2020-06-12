@@ -14,7 +14,7 @@ listView("First Job") {
         disableProject(icon = true)
     }
     jobs {
-        regex ( *First*)
+        regex ("*First*")
     }
 }
 
