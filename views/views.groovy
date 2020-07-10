@@ -6,7 +6,7 @@ def view_list = [
 ]
 
 for (each_view in view_list) {
-    listView(each_view["name"])
+    listView(each_view["name"]) {
         description(each_view["description"])
         columns {
             status()
@@ -23,4 +23,5 @@ for (each_view in view_list) {
         jobs {
             regex (each_view["regex"])
         }
+    }
 }
