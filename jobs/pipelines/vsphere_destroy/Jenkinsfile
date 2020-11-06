@@ -8,6 +8,7 @@ pipeline {
         stage('vSphere Cleanup') {
             agent any
             steps {
+            library identifier: "10.70.35.218@${params.JOBS_REPOSITORY_BRANCH}", retriever: legacySCM(scm)
                 echo 'vsphere cleanup'
             }
         stage('Build') {
