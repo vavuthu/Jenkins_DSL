@@ -1,0 +1,31 @@
+pipeline {
+    agent none;
+    options {
+        ansiColor('xterm')
+        buildDiscarder(logRotator(daysToKeepStr: '7'))
+    }
+    stages {
+        stage('vSphere Cleanup') {
+            agent any
+            steps {
+                echo 'vsphere cleanup'
+            }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+
+        }
+    }
+}
